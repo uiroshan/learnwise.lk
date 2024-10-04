@@ -84,11 +84,43 @@ function Header() {
   );
 }
 
+function Footer() {
+  return (
+    <footer className="bg-gray-100 py-4">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <p className="text-sm text-gray-600 text-center">
+          &copy; {new Date().getFullYear()} Learnwise. All rights reserved.
+        </p>
+      </div>
+    </footer>
+  );
+}
+
+function NewHeader() {
+  return (
+    <header className="bg-white shadow-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+          <div className="flex items-center">
+            <span className="text-2xl font-bold text-blue-600">Learnwise</span>
+          </div>
+          <nav>
+            <ul className="flex space-x-4">
+              <li><a href="#about" className="text-gray-600 hover:text-blue-600">About</a></li>
+              <li><a href="#features" className="text-gray-600 hover:text-blue-600">Features</a></li>
+              <li><a href="#how-it-works" className="text-gray-600 hover:text-blue-600">How It Works</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+  );
+}
+
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <section className="flex flex-col min-h-screen">
-      <Header />
+      <NewHeader />
       {children}
+      <Footer />
     </section>
   );
 }
